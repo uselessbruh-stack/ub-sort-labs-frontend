@@ -2,7 +2,9 @@ import axios from 'axios';
 
 const API_BASE =
   (import.meta.env.VITE_API_BASE_URL || '').trim() ||
-  `${window.location.protocol}//${window.location.hostname}:${import.meta.env.VITE_BACKEND_PORT || '3000'}`;
+  (import.meta.env.PROD
+    ? 'https://ub-sort-lab-backend-1.onrender.com'
+    : `${window.location.protocol}//${window.location.hostname}:${import.meta.env.VITE_BACKEND_PORT || '3000'}`);
 
 const client = axios.create({
   baseURL: API_BASE,
