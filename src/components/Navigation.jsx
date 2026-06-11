@@ -9,8 +9,11 @@ export default function Navigation() {
     { to: '/algorithms', label: 'Algorithms' },
     { to: '/languages', label: 'Languages' },
     { to: '/comparisons', label: 'Comparisons' },
-    { to: '/history', label: 'History' },
   ];
+
+  if (import.meta.env.DEV) {
+    tabs.push({ to: '/history', label: 'History' });
+  }
 
   return (
     <nav className="nav-bar">

@@ -57,7 +57,8 @@ function App() {
               <Route path="/algorithms" element={<AlgorithmsTab />} />
               <Route path="/languages" element={<LanguagesTab />} />
               <Route path="/comparisons" element={<ComparisonsTab />} />
-              <Route path="/history" element={<HistoryTab />} />
+              {import.meta.env.DEV && <Route path="/history" element={<HistoryTab />} />}
+              <Route path="*" element={<Navigate to="/algorithms" replace />} />
             </Routes>
           </div>
         </div>
