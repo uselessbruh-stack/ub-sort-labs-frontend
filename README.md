@@ -60,7 +60,7 @@ The frontend connects to the backend API via Axios. The system automatically det
 ### 1. API Resolution Hierarchy
 The base URL resolver dynamically evaluates the endpoint in the following order:
 1.  **Environment Variable Override**: Checks `import.meta.env.VITE_API_BASE_URL`.
-2.  **Production Environment Fallback**: If `import.meta.env.PROD` is true, it automatically targets the deployed Render URL: `https://ub-sort-lab-backend-1.onrender.com`
+2.  **Production Environment Fallback**: If `import.meta.env.PROD` is true, it automatically targets the deployed Render URL: `https://ub-sort-lab-backend.onrender.com`
 3.  **Local Development Fallback**: If running locally in development mode (`import.meta.env.DEV`), it defaults to: `http://localhost:3000`
 
 ### 2. Conditionally Mounted Features (History Tab)
